@@ -1,0 +1,62 @@
+.JobDetails-jobTitle {
+  font-size: 1.5em; /* Responsive font size */
+  padding-top: 2em;
+}
+
+.JobDetails-jobDescription {
+  max-width: 50vw;
+  max-height: 50vh;
+  font-size: 1em;
+  padding: 2em 0 3em 0;
+}
+
+.JobDetails-posters {
+  width: 50vw;
+  height: 70vh;
+  border: 1px solid #000;
+}
+
+.JobDetails-jobVacancy1,
+.JobDetails-education,
+.JobDetails-lastDate,
+.JobDetails-buttons {
+  padding-top: 2em;
+}
+
+.JobDetails-jobVacancy2 {
+  color: red;
+}
+
+.JobDetails-buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -20em;
+}
+
+.JobDetails-ViewAd,
+.JobDetails-Aplly,
+.JobDetails-official {
+  padding: 0.2em;
+  border: 1px solid #000;
+  margin: 0.5em 0;
+  /* text-align: center; */
+  cursor: pointer;
+  background-color: #c48a0f;
+}
+
+.JobDetails-ViewAd:hover,
+.JobDetails-Aplly:hover,
+.JobDetails-official:hover {
+  background-color: #f0f0f0;
+  border-color: #000;
+  color: #007bff;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.JobDetails-container {
+  padding-left: 20%;
+}
