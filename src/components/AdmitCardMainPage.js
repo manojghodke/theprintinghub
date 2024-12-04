@@ -5,7 +5,8 @@ import Nevbar from "./Nevbar.js";
 import CustomPaginationActionsTable from "./CustomPaginationActionsTable";
 import Spinner from "react-bootstrap/Spinner";
 import { BASE_URL } from "../Url";
-function ShowAdmitCards() {
+import ShowAdmitCards from "./ShowAdmitCards.js";
+function AdmitCardMainPage() {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -47,9 +48,9 @@ function ShowAdmitCards() {
   return (
     <div>
       <Nevbar />
-      <CustomPaginationActionsTable data={jobs} type="admitCard" />
+      <ShowAdmitCards type="admitCard" />
     </div>
   );
 }
 
-export default ShowAdmitCards;
+export default AdmitCardMainPage;

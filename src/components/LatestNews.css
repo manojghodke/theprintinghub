@@ -1,5 +1,18 @@
+.marqueeMain-container {
+  display: flex;
+  justify-content: center;
+}
 .marquee-container {
   width: 60vw;
+  height: 40vh;
+  overflow: hidden;
+  position: relative;
+  margin: 5%;
+  padding-left: 0%;
+  border: 1px solid black;
+}
+.mobile .marquee-container {
+  width: 80vw;
   height: 40vh;
   overflow: hidden;
   position: relative;

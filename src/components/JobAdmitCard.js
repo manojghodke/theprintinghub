@@ -58,7 +58,7 @@ function JobAdmitCard() {
       <div className="JobDetails-container">
         {/* Job Title */}
         <div className="JobDetails-jobTitle">{job.jobTitle}</div>
-
+        <div className="JobDetails-jobContent">{job.content}</div>
         {/* Job Image (optional) */}
         {/* {job.adImage && (
           <img
@@ -69,7 +69,7 @@ function JobAdmitCard() {
         )} */}
 
         {/* Job Description */}
-        <div className="JobDetails-jobDescription">
+        {/* <div className="JobDetails-jobDescription">
           {job.description || "Job description not available"}
         </div>
         <div className="JobDetails-infoImage">
@@ -81,28 +81,24 @@ function JobAdmitCard() {
         </div>
 
         {/* Action Buttons */}
-        <div className="JobDetails-buttons">
-          {/* Apply Online Link */}
-          {job.admitCardLink ? (
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={job.admitCardLink}
+        {/* <div className="JobDetails-buttons"> */}
+        {/* Apply Online Link */}
+        {job.admitCardLink ? (
+          <a target="_blank" rel="noopener noreferrer" href={job.admitCardLink}>
+            <div
+              className="JobDetails-Aplly"
+              role="button"
+              aria-label="Apply Online"
             >
-              <div
-                className="JobDetails-Aplly"
-                role="button"
-                aria-label="Apply Online"
-              >
-                प्रवेशपत्र डाउनलोड करा
-              </div>
-            </a>
-          ) : (
-            <div className="JobDetails-Aplly-disabled">
-              download link not available
+              प्रवेशपत्र डाउनलोड करा
             </div>
-          )}
-        </div>
+          </a>
+        ) : (
+          <div className="JobDetails-Aplly-disabled">
+            download link not available
+          </div>
+        )}
+        {/* </div> */}
       </div>
       <ReplyForm />
       <Footer />

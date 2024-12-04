@@ -7,6 +7,7 @@ import CreateResult from "../backend/CreateResult";
 import CurrentNews from "../backend/CurrentNews";
 import CreateExam from "../backend/CreateExam.js";
 import "./admin.css";
+import TextEditorForPost from "../backend/TextEditorForPost.js";
 // import CurrentNews component if you have it
 // import CurrentNews from "./CurrentNews";
 
@@ -27,57 +28,69 @@ export const Admin = () => {
           <div className="mb-5 admin-option">
             <Form.Check
               inline
-              label="Job Updates"
+              label="User"
               name="group1"
               type="radio"
               id="inline-radio-1"
-              checked={selectedOption === "Job Updates"}
+              checked={selectedOption === "User"}
               onChange={handleChange}
             />
             <Form.Check
               inline
-              label="Admit Cards"
+              label="AdmitCard"
               name="group1"
               type="radio"
               id="inline-radio-2"
-              checked={selectedOption === "Admit Cards"}
+              checked={selectedOption === "AdmitCard"}
               onChange={handleChange}
             />
             <Form.Check
               inline
-              label="Exams"
+              label="Exam"
               name="group1"
               type="radio"
               id="inline-radio-3"
-              checked={selectedOption === "Exams"}
+              checked={selectedOption === "Exam"}
               onChange={handleChange}
             />
             <Form.Check
               inline
-              label="Results"
+              label="Result"
               name="group1"
               type="radio"
               id="inline-radio-4"
-              checked={selectedOption === "Results"}
+              checked={selectedOption === "Result"}
               onChange={handleChange}
             />
             <Form.Check
               inline
-              label="CurrentNews"
+              label="CurrentNew"
               name="group1"
               type="radio"
               id="inline-radio-5"
-              checked={selectedOption === "CurrentNews"}
+              checked={selectedOption === "CurrentNew"}
+              onChange={handleChange}
+            />
+            <Form.Check
+              inline
+              label="TextEditorForPost"
+              name="group1"
+              type="radio"
+              id="inline-radio-6"
+              checked={selectedOption === "TextEditorForPost"}
               onChange={handleChange}
             />
           </div>
         </Form>
       </div>
-      {selectedOption === "Job Updates" && <CreateJobAd />}
+      {/* {selectedOption === "Job Updates" && <CreateJobAd />}
       {selectedOption === "Exams" && <CreateExam />}
       {selectedOption === "Admit Cards" && <CreateAdmitCard />}
       {selectedOption === "Results" && <CreateResult />}
       {selectedOption === "CurrentNews" && <CurrentNews />}
+      {selectedOption === "TextEditorForPost" && <TextEditorForPost />} */}
+
+      <TextEditorForPost selectedOption={selectedOption} />
     </div>
   );
 };

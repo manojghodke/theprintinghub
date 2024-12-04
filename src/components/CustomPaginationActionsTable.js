@@ -7,15 +7,15 @@ function CustomPaginationActionsTable(prop) {
   const [loading, setLoading] = useState(true);
   const [exams, setExams] = useState([]);
   const [error, setError] = useState(null);
+  const type = prop.type;
 
-  // Simulate fetching data (If you need to fetch data, replace this with an API call)
   useEffect(() => {
     if (prop.data && prop.data.length > 0) {
       setExams(prop.data);
-      setLoading(false); // Set loading to false once data is available
+      setLoading(false);
     } else {
       setError("No data found.");
-      setLoading(false); // Set loading to false even if no data is found
+      setLoading(false);
     }
   }, [prop.data]);
 
@@ -41,7 +41,6 @@ function CustomPaginationActionsTable(prop) {
           <thead>
             <tr>
               <th>{prop.type}</th>
-              {exams.some((exam) => exam.date) && <th>Date</th>}
             </tr>
           </thead>
           <tbody>
@@ -51,7 +50,8 @@ function CustomPaginationActionsTable(prop) {
                   <td>
                     {" "}
                     <Link
-                      to={`/${prop.type}/${encodeURIComponent(exam.jobTitle)}`}
+                      state={{ type, exam }}
+                      to={`/${prop.type}/${exam.jobTitle}`}
                     >
                       {exam.jobTitle || "N/A"}
                     </Link>

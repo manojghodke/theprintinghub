@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import CustomPaginationActionsTable from "./CustomPaginationActionsTable.js";
 import Spinner from "react-bootstrap/Spinner";
 import { BASE_URL } from "../Url";
+import ShowResults from "./ShowResults.js";
 export const ResultMainPage = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -36,7 +37,7 @@ export const ResultMainPage = () => {
   return (
     <div>
       <Nevbar />
-      <CustomPaginationActionsTable data={jobs} type="result" />
+      <ShowResults type="result" />
     </div>
   );
 };

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import "./ShowJobs.css";
 import Spinner from "react-bootstrap/Spinner";
 import { BASE_URL } from "../Url";
-function ShowAdmitCards() {
+import JobCard from "./JobCard";
+function ShowAdmitCards({ type }) {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -47,35 +48,36 @@ function ShowAdmitCards() {
       {jobs.length > 0 ? (
         <div className="jobs-grid">
           {[...jobs].reverse().map((job, index) => {
-            const imageUrl = job.file
-              ? `${BASE_URL()}/${job.file}`
-              : "img/simple.png";
+            // const imageUrl = job.file
+            //   ? `${BASE_URL()}/${job.file}`
+            //   : "img/simple.png";
 
             return (
-              <div key={index} className="job-item">
-                <div className="job-content">
-                  <img
-                    style={{ height: "3rem" }}
-                    src={imageUrl}
-                    alt={job.jobTitle}
-                    className="job-image img-style"
-                  />
-                  <div className="job-details">
-                    <div className="job-title">
-                      <Link to={`/AdmitCard/${job.jobTitle}`}>
-                        {job.jobTitle}
-                      </Link>
-                    </div>
-                    {/* 
-                    <p>
-                      <strong>Vacancies:</strong> {job.vacancy}
-                    </p>
-                    <p>
-                      <strong>Date:</strong> {formatDate(job.date)}
-                    </p> */}
-                  </div>
-                </div>
-              </div>
+              // <div key={index} className="job-item">
+              //   <div className="job-content">
+              //     <img
+              //       style={{ height: "3rem" }}
+              //       src={imageUrl}
+              //       alt={job.jobTitle}
+              //       className="job-image img-style"
+              //     />
+              //     <div className="job-details">
+              //       <div className="job-title">
+              //         <Link to={`/AdmitCard/${job.jobTitle}`}>
+              //           {job.jobTitle}
+              //         </Link>
+              //       </div>
+              //       {/*
+              //       <p>
+              //         <strong>Vacancies:</strong> {job.vacancy}
+              //       </p>
+              //       <p>
+              //         <strong>Date:</strong> {formatDate(job.date)}
+              //       </p> */}
+              //     </div>
+              //   </div>
+              // </div>
+              <JobCard job={job} type={type} index={index} />
             );
           })}
         </div>

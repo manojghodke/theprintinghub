@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import "./ShowJobs.css";
 import Spinner from "react-bootstrap/Spinner";
 import { BASE_URL } from "../Url";
+import JobCard from "./JobCard";
 
-function ShowResults() {
+function ShowResults({ type }) {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -53,21 +54,22 @@ function ShowResults() {
               : "img/simple.png";
 
             return (
-              <div key={index} className="job-item">
-                <div className="job-content ">
-                  <img
-                    style={{ height: "3rem" }}
-                    src={imageUrl}
-                    alt={job.jobTitle}
-                    className="job-image img-style"
-                  />
-                  <div className="job-details">
-                    <div className="job-title">
-                      <Link to={`/result/${job.jobTitle}`}>{job.jobTitle}</Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              // <div key={index} className="job-item">
+              //   <div className="job-content ">
+              //     <img
+              //       style={{ height: "3rem" }}
+              //       src={imageUrl}
+              //       alt={job.jobTitle}
+              //       className="job-image img-style"
+              //     />
+              //     <div className="job-details">
+              //       <div className="job-title">
+              //         <Link to={`/result/${job.jobTitle}`}>{job.jobTitle}</Link>
+              //       </div>
+              //     </div>
+              //   </div>
+              // </div>
+              <JobCard job={job} type={type} index={index} />
             );
           })}
         </div>

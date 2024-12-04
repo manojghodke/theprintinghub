@@ -42,7 +42,7 @@ function LatestNews() {
   const handleClose = () => setSelectedNews(null);
 
   return (
-    <div className={selectedNews ? "blur-background" : ""}>
+    <div className={selectedNews ? "blur-background" : "marqueeMain-container"}>
       <div className="marquee-container">
         {loading && <div className="loading">Loading news...</div>}
         {error && <div className="error">{error}</div>}

@@ -39,7 +39,7 @@ const Hero = () => {
         </Container>
         <div className="radioForm">
           <Form>
-            <div className="mb-5">
+            <div className="mb-5 radioFrom-mb5">
               <Form.Check
                 inline
                 label="Job Updates"
@@ -84,10 +84,14 @@ const Hero = () => {
 
             <div className="main-contain">
               <div className="cardCss">
-                {selectedOption === "Job Updates" && <ShowJobs />}
-                {selectedOption === "Admit Cards" && <ShowAdmitCards />}
-                {selectedOption === "Exams" && <ShowExamCards />}
-                {selectedOption === "Results" && <ShowResults />}
+                {selectedOption === "Job Updates" && (
+                  <ShowJobs type="allUsers" />
+                )}
+                {selectedOption === "Admit Cards" && (
+                  <ShowAdmitCards type="AdmitCard" />
+                )}
+                {selectedOption === "Exams" && <ShowExamCards type="Exam" />}
+                {selectedOption === "Results" && <ShowResults type="Result" />}
               </div>
             </div>
           </Form>

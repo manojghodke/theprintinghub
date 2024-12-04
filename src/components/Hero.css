@@ -4,6 +4,13 @@
   margin-right: 15%;
   height: auto;
 }
+.mobile .main-container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.mobile .radioFrom-mb5 {
+  margin-left: 5%;
+}
 .hero {
   /* background: url("/img/hero-bg.jpg") no-repeat center center; */
   height: 100%;
@@ -46,4 +53,8 @@
 .current_update {
   margin-left: 5%;
   margin-top: 4%;
+}
+.mobile .current_update {
+  display: flex;
+  justify-content: center;
 }

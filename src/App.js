@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { MainContainer } from "./components/MainContainer";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -20,17 +20,42 @@ import ExamDetails from "./components/ExamDetails";
 import { ResultMainPage } from "./components/ResultMainPage";
 import HelpDesk from "./components/HelpDesk";
 import JobResult from "./components/JobResult";
+import PostDetails from "./components/PostDetails";
 
 function App() {
+  useEffect(() => {
+    const checkScreenSize = () => {
+      if (window.innerWidth <= 768) {
+        document.body.classList.add("mobile");
+      } else {
+        document.body.classList.remove("mobile");
+      }
+    };
+
+    // Initial check
+    checkScreenSize();
+
+    // Listen to window resize
+    window.addEventListener("resize", checkScreenSize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainContainer />} />
-          <Route path="/job/:jobTitle" element={<JobDetails />} />
-          <Route path="/AdmitCard/:jobTitle" element={<JobAdmitCard />} />
-          <Route path="/Result/:jobTitle" element={<JobResult />} />
+          {/* <Route path="/job/:jobTitle" element={<JobDetails />} /> */}
+          <Route path="/allUsers/:jobTitle" element={<PostDetails />} />
+          {/* <Route path="/AdmitCard/:jobTitle" element={<JobAdmitCard />} /> */}
+          <Route path="/AdmitCard/:jobTitle" element={<PostDetails />} />
+          <Route path="/Result/:jobTitle" element={<PostDetails />} />
+          {/* <Route path="/Result/:jobTitle" element={<JobResult />} /> */}
           <Route path="/exams" element={<ExamDetails />} />
+          <Route path="/Exam/:jobTitle" element={<PostDetails />} />
           <Route path="/adminLogin" element={<LoginAdmin />} />
           <Route path="/job-updates" element={<JobUpdateMainPage />} />
           <Route path="/admit-cards" element={<AdmitCardMainPage />} />
