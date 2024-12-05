@@ -101,3 +101,6 @@
   display: flex;
   justify-content: center;
 }
+.mobile .current_update_1 {
+  width:40%;
+}
