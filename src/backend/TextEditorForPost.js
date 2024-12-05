@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import JoditEditor from "jodit-react";
 import "./TextEditorForPost.css";
+import { BASE_URL } from "../Url";
 
 function TextEditorForPost({ selectedOption }) {
   const type = selectedOption;
