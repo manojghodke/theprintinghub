@@ -28,7 +28,7 @@ function TextEditorForPost({ selectedOption }) {
 
     try {
       // Dynamically construct the URL using the selected 'type'
-      const apiUrl = `http://localhost:4000/api/v1/create${type}`;
+     const apiUrl = `${BASE_URL()}/api/v1/create${type}`;
 
       const response = await fetch(apiUrl, {
         method: "POST",
