@@ -85,3 +85,10 @@ a {
   width: 100%;
   height: 100%;
 }
+.mobile .JobDetails-jobContent {
+  padding: 10px 30px 20px 30px;
+}
+ .JobDetails-jobContent {
+   widdth:50%
+  padding: 35px;
+}
